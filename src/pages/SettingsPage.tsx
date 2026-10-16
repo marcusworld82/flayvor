@@ -103,18 +103,36 @@ export function SettingsPage() {
         <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Providers</h2>
         <div className="card-surface p-4 space-y-3 text-sm">
           <ProviderRow
-            name="Gemini (analysis)"
-            status="Server route ready \u00b7 needs GEMINI_API_KEY"
+            name="Gemini (analysis \u2192 prompts)"
+            status="Live when GEMINI_API_KEY + FLAYVOR_AI_SPENDING=1"
+          />
+          <ProviderRow
+            name="Openverse (discover)"
+            status="Free \u00b7 works without a key (optional OPENVERSE_API_KEY)"
+          />
+          <ProviderRow
+            name="Pixabay (discover)"
+            status="Free key \u00b7 set PIXABAY_API_KEY (pixabay.com/api/docs)"
+          />
+          <ProviderRow
+            name="Unsplash (discover)"
+            status="Free Access Key \u00b7 set UNSPLASH_ACCESS_KEY"
           />
           <ProviderRow
             name="GPT Image 2.5 (generation)"
-            status="Awaiting configured adapter & verified identifier"
+            status="Not wired \u2014 needs verified adapter"
           />
-          <ProviderRow name="Pinterest" status="OAuth not configured \u00b7 board import disabled" />
-          <ProviderRow name="Are.na" status="Public channel adapter stub \u00b7 not live" />
-          <ProviderRow name="Pexels" status="Disabled until terms verification" />
-          <ProviderRow name="Cosmos" status="Link bookmarking only" />
+          <ProviderRow
+            name="Pinterest"
+            status="No free public API for this use \u00b7 not integrated"
+          />
         </div>
+        <p className="text-xs text-ink-muted">
+          Free discovery keys and Gemini are set as Vercel environment variables (Project \u2192
+          Settings \u2192 Environment Variables), then redeploy. Openverse search works with zero
+          setup. Analysis uses your Google/Gemini key to dissect images and produce reconstructed
+          + style-only prompts.
+        </p>
       </section>
 
       <section className="space-y-3">
