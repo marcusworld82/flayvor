@@ -1,6 +1,16 @@
 export type MediaType = 'image' | 'video';
 
-export type MediaSource = 'upload' | 'pexels' | 'are.na' | 'pinterest' | 'cosmos' | 'generated' | 'sample';
+export type MediaSource =
+  | 'upload'
+  | 'pixabay'
+  | 'unsplash'
+  | 'openverse'
+  | 'pexels'
+  | 'are.na'
+  | 'pinterest'
+  | 'cosmos'
+  | 'generated'
+  | 'sample';
 
 export type SwipeAction = 'save' | 'pass';
 
